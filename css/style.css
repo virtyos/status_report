@@ -1,0 +1,200 @@
+body {
+  background: #eee;
+}
+
+.l-layout {
+  position: relative;
+  overflow: hidden;
+}
+
+.header, .content {
+  position: relative;
+}
+
+.header {
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  outline: none;
+  background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
+  background-repeat: repeat-x;
+  border: 1px solid #d4d4d4;
+  min-height: 40px;
+  height: 45px;
+}
+
+.header-content, .content {
+  width: 900px;
+  margin: 0px auto;
+}
+
+.header-content {
+ overflow: hidden;
+}
+
+.content {
+  background: #fff;
+  padding: 20px 0px;
+  border-radius: 10px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.content-content {
+  margin: 0px 20px;
+}
+
+.middle_block {
+  margin: 0 auto;
+}
+
+.error_list {
+  color: red;
+  padding: 10px 0px;
+}
+
+.logo {
+ display: block;
+ float: left;
+}
+
+.nav {
+  display: block;
+  float: right !important;
+  margin-right: 26px!important;
+}
+
+.nav ul {
+  overflow: hidden;
+}
+
+.nav ul li{
+  float: left;
+  margin-left: 20px;
+  display: block;
+  padding-top: 10px;
+}
+
+.nav ul li a {
+  font-size: 16px;
+}
+
+.user-block {
+ overflow: hidden;
+}
+
+.avatar, .user-data {
+  float: left;
+}
+.user-data {
+  margin-left: 30px;
+  width: auto;
+}
+
+.avatar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+
+.avatar img {
+  border-radius: 150px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 4px rgba(0,0,0,0.5);
+}
+
+.profile-info h1 {
+  color: #607387;
+  font-size: 20px;
+  display: block;
+  float: right;
+}
+
+.profile-info {
+  overflow: hidden;
+  position: relative;
+  width: 500px;
+}
+
+.avatar .actions {
+  margin-top: 20px;
+}
+
+.avatar .actions  a {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.reports-block {
+  clear: both;
+}
+
+#repostAddForm {
+  display: block;
+  float: right;
+}
+
+#repostAddForm input[type=submit] {
+  float: right;
+}
+
+.reportBlock:first-child {
+  border-top: none !important;
+}
+
+.reportBlock {
+  overflow: hidden;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.reportBlock .left {
+  float: left;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.reportBlock .left .ava { 
+ margin-bottom: 10px
+}
+
+.reportBlock .left .ava  img {
+  border-radius: 42px;
+  border: 1px solid #ccc;
+}
+
+
+.reportBlock .text {
+  float: left;
+  margin-left: 10px;
+}
+
+.reportBlock .date {
+  float: right;
+  margin-left: 10px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+#no_report {
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+  border: 3px dotted #222;
+}
+
+.pagin a {
+  display: inline-block;
+  text-decoration: none;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: #ccc;
+}
+
+.pagin a.active {
+  background: #fff;
+}
