@@ -26,26 +26,6 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
---
--- Структура таблицы `flat_sessions`
---
-
-CREATE TABLE IF NOT EXISTS `flat_sessions` (
-  `id` char(32) NOT NULL,
-  `expire` int(11) DEFAULT NULL,
-  `data` text,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `flat_sessions`
---
-
-INSERT INTO `flat_sessions` (`id`, `expire`, `data`) VALUES
-('c738inlt9kg6hfs134bs5rrp52', 1414703689, 'gii__returnUrl|s:10:"/gii/model";gii__id|s:5:"yiier";gii__name|s:5:"yiier";gii__states|a:0:{}'),
-('np0bvga1kmk5pq305satr6rso0', 1414703657, 'gii__returnUrl|s:10:"/gii/model";');
-
--- --------------------------------------------------------
 
 --
 -- Структура таблицы `image`
@@ -115,28 +95,6 @@ INSERT INTO `report` (`id`, `text`, `created_at`, `owner_id`) VALUES
 
 -- --------------------------------------------------------
 
---
--- Структура таблицы `status_reporter_sessions`
---
-
-CREATE TABLE IF NOT EXISTS `status_reporter_sessions` (
-  `id` char(32) NOT NULL,
-  `expire` int(11) DEFAULT NULL,
-  `data` text,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `status_reporter_sessions`
---
-
-INSERT INTO `status_reporter_sessions` (`id`, `expire`, `data`) VALUES
-('9u9r5sm5vqg8vsqtk1sr596500', 1414764862, ''),
-('bgc9l510ja1pjsldn4hindd022', 1414763470, ''),
-('f6psq3fr2jtbbjs915b3maf794', 1414763104, ''),
-('u0rctea78ed1lq1qbmkvn3vtp3', 1414764031, 'c5816056857be7fa962b9e7a7c4cbace__id|s:1:"3";c5816056857be7fa962b9e7a7c4cbace__name|s:5:"admin";c5816056857be7fa962b9e7a7c4cbacelogin|s:5:"admin";c5816056857be7fa962b9e7a7c4cbacerole|s:5:"admin";c5816056857be7fa962b9e7a7c4cbace__states|a:2:{s:5:"login";b:1;s:4:"role";b:1;}');
-
--- --------------------------------------------------------
 
 --
 -- Структура таблицы `user`
@@ -177,7 +135,7 @@ INSERT INTO `user` (`id`, `login`, `password_hash`, `first_name`, `last_name`, `
 ALTER TABLE `report`
   ADD CONSTRAINT `report_ibfk_1` FOREIGN KEY (`owner_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
-  ALTER TABLE  `user` CHANGE  `aut_token_expires`  `auth_token_expires` INT( 11 ) NOT NULL
+  ALTER TABLE  `user` CHANGE  `aut_token_expires`  `auth_token_expires` INT( 11 ) NOT NULL;
 SQL;
     $connection = Yii::app()->db; 	
     $command = $connection->createCommand($sql);
