@@ -124,10 +124,23 @@ class UserController extends AppController {
     $this->render('add', $this->renderData);
   }
   
+  public function actionDelete() {
+    $userId = Yii::app()->request->getParam('id');
+    $deleteResult = User::model()->deleteByPk($userId);
+    $result = array();    
+    if ($deleteResult > 0) {
+      $result['status'] = self::AJAX_STATUS_SUCCESS;
+    } else {
+      $result['status'] = self::AJAX_STATUS_ERROR;
+    }
+    echo json_encode($result); 
+  }
+  
   public function actionGetReports() {
     $userId = Yii::app()->request->getParam('userId');
     $limit = Yii::app()->request->getParam('limit');
     $offset = Yii::app()->request->getParam('offset');
+    $result = array();
     $reports = Report::model()->findAll(
       array(
         'limit' => $limit,

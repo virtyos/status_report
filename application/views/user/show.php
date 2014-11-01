@@ -6,7 +6,7 @@
     <img src="<?php echo $user->getAvatar('medium_sqw', 1);?>">
       <div class="actions">
       <?php
-        if (!Yii::app()->user->id === Yii::app()->user->id ||
+        if (Yii::app()->user->id === $user->id ||
         Yii::app()->user->role === 'admin') :
       ?>
         <a href="/user/edit?id=<?php echo $user->id; ?>">Редактировать профиль</a>

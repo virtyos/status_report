@@ -173,6 +173,8 @@ body {
 .reportBlock .date {
   float: right;
   margin-left: 10px;
+  width: 100px;
+  text-align: right;
 }
 
 h3 {

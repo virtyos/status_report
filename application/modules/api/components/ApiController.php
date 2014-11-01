@@ -18,9 +18,17 @@ class ApiController extends CController
   public function init() {
     $this->authToken = Yii::app()->request->getParam('auth_token');
     if ($this->authToken) {
-      $this->currentUser = User::model()->findByAttributes(
+      $user = User::model()->findByAttributes(
         array('auth_token' => $this->authToken)
       );
+      if ($user) {
+        $time = time();
+        if ($time - $user->auth_token_expires > 0) {
+          $this->authToken = null;
+        } else {
+          $this->currentUser = $user;
+        }
+      }
     }
     parent::init();
   }

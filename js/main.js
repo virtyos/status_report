@@ -88,3 +88,41 @@ var ReportList = {
   }
 }
 
+var UserList = {
+  init: function() {
+    $('a.user_del').bind('click', this.deleteConfirm);
+    $('a.del_yes').bind('click', this.deleteConfirmYes);
+    $('a.del_no').bind('click', this.deleteConfirmNo);
+  },
+  
+  deleteConfirm: function() {
+    var el = $(this);
+    el.parent().parent().find('#actions').hide();
+    el.parent().parent().find('#del_cnfirm').show();
+    return false;
+  },
+  
+  deleteConfirmYes: function() {
+    var el = $(this);
+    var id = el.parent().parent().find('input[name=userId]').val();
+    $.post('/user/delete', {id: id}, function(result) {
+      result = $.parseJSON(result);
+      if (result['status'] === 1) {
+        el.parent().parent().parent().remove();
+      } else {
+        el.parent().parent().find('#del_cnfirm').hide();    
+        el.parent().parent().find('#actions').show();
+      }
+    })
+    return false;
+  },
+  
+  deleteConfirmNo: function() {
+    var el = $(this);
+    el.parent().parent().find('#del_cnfirm').hide();    
+    el.parent().parent().find('#actions').show();
+    return false;
+  }
+  
+}
+

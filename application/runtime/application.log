@@ -8524,3 +8524,95 @@ Stack trace:
 #13 {main}
 REQUEST_URI=/api/report/create?auth_token=ee0bb781be81e2d865d110613478b41a&id&Report[text]=ssasAdDa
 ---
+2014/11/01 17:46:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "show".' in Z:\home\yii\web\CController.php:484
+Stack trace:
+#0 Z:\home\yii\web\CController.php(271): CController->missingAction('show')
+#1 Z:\home\yii\web\CWebApplication.php(276): CController->run('show')
+#2 Z:\home\yii\web\CWebApplication.php(135): CWebApplication->runController('api/report/show')
+#3 Z:\home\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 Z:\home\status_report\index.php(22): CApplication->run()
+#5 {main}
+REQUEST_URI=/api/report/show
+---
+2014/11/01 17:47:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "loout".' in Z:\home\yii\web\CController.php:484
+Stack trace:
+#0 Z:\home\yii\web\CController.php(271): CController->missingAction('loout')
+#1 Z:\home\yii\web\CWebApplication.php(276): CController->run('loout')
+#2 Z:\home\yii\web\CWebApplication.php(135): CWebApplication->runController('api/auth/loout')
+#3 Z:\home\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 Z:\home\status_report\index.php(22): CApplication->run()
+#5 {main}
+REQUEST_URI=/api/auth/loout
+---
+2014/11/01 17:49:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "favicon.ico".' in Z:\home\yii\web\CWebApplication.php:280
+Stack trace:
+#0 Z:\home\yii\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 Z:\home\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 Z:\home\status_report\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/11/01 17:49:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "favicon.ico".' in Z:\home\yii\web\CWebApplication.php:280
+Stack trace:
+#0 Z:\home\yii\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 Z:\home\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 Z:\home\status_report\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/11/01 17:51:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "showLost".' in Z:\home\yii\web\CController.php:484
+Stack trace:
+#0 Z:\home\yii\web\CController.php(271): CController->missingAction('showLost')
+#1 Z:\home\yii\web\CWebApplication.php(276): CController->run('showLost')
+#2 Z:\home\yii\web\CWebApplication.php(135): CWebApplication->runController('api/report/show...')
+#3 Z:\home\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#4 Z:\home\status_report\index.php(22): CApplication->run()
+#5 {main}
+REQUEST_URI=/api/report/showLost
+---
+2014/11/01 23:55:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "favicon.ico".' in Z:\home\yii\web\CWebApplication.php:280
+Stack trace:
+#0 Z:\home\yii\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 Z:\home\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 Z:\home\status_report\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/11/02 00:28:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "img/icon_edit/png".' in Z:\home\yii\web\CWebApplication.php:280
+Stack trace:
+#0 Z:\home\yii\web\CWebApplication.php(135): CWebApplication->runController('img/icon_edit/p...')
+#1 Z:\home\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 Z:\home\status_report\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/icon_edit/png
+HTTP_REFERER=http://status_report.dev/user/all
+---
+2014/11/02 00:28:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "img/icon_delete/png".' in Z:\home\yii\web\CWebApplication.php:280
+Stack trace:
+#0 Z:\home\yii\web\CWebApplication.php(135): CWebApplication->runController('img/icon_delete...')
+#1 Z:\home\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 Z:\home\status_report\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/icon_delete/png
+HTTP_REFERER=http://status_report.dev/user/all
+---
+2014/11/02 01:07:08 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in Z:\home\yii\web\CHttpRequest.php:929
+Stack trace:
+#0 Z:\home\yii\base\CComponent.php(559): CHttpRequest->validateCsrfToken(Object(CEvent))
+#1 Z:\home\yii\base\CApplication.php(189): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 Z:\home\yii\base\CApplication.php(161): CApplication->onBeginRequest(Object(CEvent))
+#3 Z:\home\status_report\index.php(22): CApplication->run()
+#4 {main}
+REQUEST_URI=/user/del
+HTTP_REFERER=http://status_report.dev/user/all
+---
+2014/11/02 01:07:52 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in Z:\home\yii\web\CHttpRequest.php:929
+Stack trace:
+#0 Z:\home\yii\base\CComponent.php(559): CHttpRequest->validateCsrfToken(Object(CEvent))
+#1 Z:\home\yii\base\CApplication.php(189): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 Z:\home\yii\base\CApplication.php(161): CApplication->onBeginRequest(Object(CEvent))
+#3 Z:\home\status_report\index.php(22): CApplication->run()
+#4 {main}
+REQUEST_URI=/user/delete
+HTTP_REFERER=http://status_report.dev/user/all
+---

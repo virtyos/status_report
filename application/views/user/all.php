@@ -17,3 +17,8 @@
 ?>
   </div>
 </div>
+<script type="text/javascript">
+  $(function() {
+    UserList.init();
+  })
+</script>
