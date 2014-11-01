@@ -8369,3 +8369,158 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/api/auth
 ---
+2014/11/01 15:18:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "favicon.ico".' in Z:\home\yii\web\CWebApplication.php:280
+Stack trace:
+#0 Z:\home\yii\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 Z:\home\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 Z:\home\status_report\index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/11/01 16:27:51 [error] [exception.CException] exception 'CException' with message 'В классе User и его поведениях не найден метод или замыкание с именем "getAavatar".' in Z:\home\yii\base\CComponent.php:266
+Stack trace:
+#0 Z:\home\yii\db\ar\CActiveRecord.php(226): CComponent->__call('getAavatar', Array)
+#1 Z:\home\status_report\application\views\user\edit.php(57): CActiveRecord->__call('getAavatar', Array)
+#2 Z:\home\status_report\application\views\user\edit.php(57): User->getAavatar('small', 1)
+#3 Z:\home\yii\web\CBaseController.php(127): require('Z:\home\status_...')
+#4 Z:\home\yii\web\CBaseController.php(96): CBaseController->renderInternal('Z:\home\status_...', Array, true)
+#5 Z:\home\yii\web\CController.php(870): CBaseController->renderFile('Z:\home\status_...', Array, true)
+#6 Z:\home\yii\web\CController.php(783): CController->renderPartial('edit', Array, true)
+#7 Z:\home\status_report\application\controllers\UserController.php(77): CController->render('edit', Array)
+#8 Z:\home\yii\web\actions\CInlineAction.php(50): UserController->actionEdit()
+#9 Z:\home\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 Z:\home\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 Z:\home\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#12 Z:\home\yii\web\filters\CFilterChain.php(131): CFilter->filter(Object(CFilterChain))
+#13 Z:\home\yii\web\CController.php(292): CFilterChain->run()
+#14 Z:\home\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 Z:\home\yii\web\CWebApplication.php(276): CController->run('edit')
+#16 Z:\home\yii\web\CWebApplication.php(135): CWebApplication->runController('user/edit')
+#17 Z:\home\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#18 Z:\home\status_report\index.php(22): CApplication->run()
+#19 {main}
+REQUEST_URI=/user/edit?id=3
+HTTP_REFERER=http://status_report.dev/user/show/3
+---
+2014/11/01 16:28:03 [error] [php] imagecreatetruecolor() [<a href='function.imagecreatetruecolor'>function.imagecreatetruecolor</a>]: Invalid image dimensions (Z:\home\status_report\application\components\SimpleImage.php:108)
+Stack trace:
+#0 Z:\home\status_report\application\controllers\ImageController.php(110): ImageController->resizeImage()
+#1 Z:\home\status_report\application\controllers\ImageController.php(19): ImageController->Process()
+#2 unknown(0): ImageController->actionGet()
+#3 Z:\home\yii\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#4 Z:\home\yii\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#5 Z:\home\yii\web\CController.php(309): CInlineAction->runWithParams()
+#6 Z:\home\yii\web\CController.php(287): ImageController->runAction()
+#7 Z:\home\yii\web\CController.php(266): ImageController->runActionWithFilters()
+#8 Z:\home\yii\web\CWebApplication.php(276): ImageController->run()
+#9 Z:\home\yii\web\CWebApplication.php(135): CWebApplication->runController()
+#10 Z:\home\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 Z:\home\status_report\index.php(22): CWebApplication->run()
+REQUEST_URI=/image/get/id/6/size/small/toSize/1/?rev=1
+2014/11/01 16:36:05 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "User.auth_token_expires".' in Z:\home\yii\base\CComponent.php:174
+Stack trace:
+#0 Z:\home\yii\db\ar\CActiveRecord.php(160): CComponent->__set('auth_token_expi...', 1414852565)
+#1 Z:\home\status_report\application\modules\api\models\LoginTokenForm.php(52): CActiveRecord->__set('auth_token_expi...', 1414852565)
+#2 Z:\home\status_report\application\modules\api\controllers\AuthController.php(14): LoginTokenForm->authenticate()
+#3 Z:\home\yii\web\actions\CInlineAction.php(50): AuthController->actionLogin()
+#4 Z:\home\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 Z:\home\yii\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#6 Z:\home\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 Z:\home\yii\web\CWebApplication.php(276): CController->run('login')
+#8 Z:\home\yii\web\CWebApplication.php(135): CWebApplication->runController('api/auth/login')
+#9 Z:\home\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#10 Z:\home\status_report\index.php(22): CApplication->run()
+#11 {main}
+REQUEST_URI=/api/auth/login?login=admin&password=123
+---
+2014/11/01 16:37:11 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "User.aut_token_expires".' in Z:\home\yii\base\CComponent.php:131
+Stack trace:
+#0 Z:\home\yii\db\ar\CActiveRecord.php(144): CComponent->__get('aut_token_expir...')
+#1 Z:\home\yii\validators\CNumberValidator.php(79): CActiveRecord->__get('aut_token_expir...')
+#2 Z:\home\yii\validators\CValidator.php(197): CNumberValidator->validateAttribute(Object(User), 'aut_token_expir...')
+#3 Z:\home\yii\base\CModel.php(158): CValidator->validate(Object(User), NULL)
+#4 Z:\home\yii\db\ar\CActiveRecord.php(786): CModel->validate(NULL)
+#5 Z:\home\status_report\application\modules\api\models\LoginTokenForm.php(53): CActiveRecord->save()
+#6 Z:\home\status_report\application\modules\api\controllers\AuthController.php(14): LoginTokenForm->authenticate()
+#7 Z:\home\yii\web\actions\CInlineAction.php(50): AuthController->actionLogin()
+#8 Z:\home\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 Z:\home\yii\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#10 Z:\home\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 Z:\home\yii\web\CWebApplication.php(276): CController->run('login')
+#12 Z:\home\yii\web\CWebApplication.php(135): CWebApplication->runController('api/auth/login')
+#13 Z:\home\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#14 Z:\home\status_report\index.php(22): CApplication->run()
+#15 {main}
+REQUEST_URI=/api/auth/login?login=admin&password=123
+---
+2014/11/01 16:44:03 [error] [exception.CException] exception 'CException' with message 'В классе HttpRequest и его поведениях не найден метод или замыкание с именем "getaParam".' in Z:\home\yii\base\CComponent.php:266
+Stack trace:
+#0 Z:\home\status_report\application\modules\api\controllers\UserController.php(63): CComponent->__call('getaParam', Array)
+#1 Z:\home\status_report\application\modules\api\controllers\UserController.php(63): HttpRequest->getaParam('id')
+#2 Z:\home\yii\web\actions\CInlineAction.php(50): UserController->actionShow()
+#3 Z:\home\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 Z:\home\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 Z:\home\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#6 Z:\home\yii\web\filters\CFilterChain.php(131): CFilter->filter(Object(CFilterChain))
+#7 Z:\home\yii\web\CController.php(292): CFilterChain->run()
+#8 Z:\home\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 Z:\home\yii\web\CWebApplication.php(276): CController->run('show')
+#10 Z:\home\yii\web\CWebApplication.php(135): CWebApplication->runController('api/user/show')
+#11 Z:\home\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#12 Z:\home\status_report\index.php(22): CApplication->run()
+#13 {main}
+REQUEST_URI=/api/user/show?auth_token=ee0bb781be81e2d865d110613478b41a
+---
+2014/11/01 16:45:43 [error] [exception.CException] exception 'CException' with message 'В классе HttpRequest и его поведениях не найден метод или замыкание с именем "getaParam".' in Z:\home\yii\base\CComponent.php:266
+Stack trace:
+#0 Z:\home\status_report\application\modules\api\controllers\UserController.php(33): CComponent->__call('getaParam', Array)
+#1 Z:\home\status_report\application\modules\api\controllers\UserController.php(33): HttpRequest->getaParam('User')
+#2 Z:\home\yii\web\actions\CInlineAction.php(50): UserController->actionEdit()
+#3 Z:\home\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 Z:\home\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 Z:\home\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#6 Z:\home\yii\web\filters\CFilterChain.php(131): CFilter->filter(Object(CFilterChain))
+#7 Z:\home\yii\web\CController.php(292): CFilterChain->run()
+#8 Z:\home\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 Z:\home\yii\web\CWebApplication.php(276): CController->run('edit')
+#10 Z:\home\yii\web\CWebApplication.php(135): CWebApplication->runController('api/user/edit')
+#11 Z:\home\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#12 Z:\home\status_report\index.php(22): CApplication->run()
+#13 {main}
+REQUEST_URI=/api/user/edit?auth_token=ee0bb781be81e2d865d110613478b41a&id=3&first_name=www
+---
+2014/11/01 16:46:16 [warning] [application] Не удалось присвоить небезопасный атрибут "id" класса "User".
+2014/11/01 16:48:36 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "AdminFilter.currentUser".' in Z:\home\yii\base\CComponent.php:131
+Stack trace:
+#0 Z:\home\status_report\application\modules\api\filters\AdminFilter.php(4): CComponent->__get('currentUser')
+#1 Z:\home\yii\web\filters\CFilter.php(39): AdminFilter->preFilter(Object(CFilterChain))
+#2 Z:\home\yii\web\filters\CFilterChain.php(131): CFilter->filter(Object(CFilterChain))
+#3 Z:\home\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#4 Z:\home\yii\web\filters\CFilterChain.php(131): CFilter->filter(Object(CFilterChain))
+#5 Z:\home\yii\web\CController.php(292): CFilterChain->run()
+#6 Z:\home\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 Z:\home\yii\web\CWebApplication.php(276): CController->run('delete')
+#8 Z:\home\yii\web\CWebApplication.php(135): CWebApplication->runController('api/user/delete')
+#9 Z:\home\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#10 Z:\home\status_report\index.php(22): CApplication->run()
+#11 {main}
+REQUEST_URI=/api/user/delete?auth_token=ee0bb781be81e2d865d110613478b41a&id=5
+---
+2014/11/01 16:57:41 [error] [exception.CException] exception 'CException' with message 'В классе HttpRequest и его поведениях не найден метод или замыкание с именем "getaParam".' in Z:\home\yii\base\CComponent.php:266
+Stack trace:
+#0 Z:\home\status_report\application\modules\api\controllers\ReportController.php(13): CComponent->__call('getaParam', Array)
+#1 Z:\home\status_report\application\modules\api\controllers\ReportController.php(13): HttpRequest->getaParam('Report')
+#2 Z:\home\yii\web\actions\CInlineAction.php(50): ReportController->actionCreate()
+#3 Z:\home\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 Z:\home\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 Z:\home\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#6 Z:\home\yii\web\filters\CFilterChain.php(131): CFilter->filter(Object(CFilterChain))
+#7 Z:\home\yii\web\CController.php(292): CFilterChain->run()
+#8 Z:\home\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 Z:\home\yii\web\CWebApplication.php(276): CController->run('create')
+#10 Z:\home\yii\web\CWebApplication.php(135): CWebApplication->runController('api/report/crea...')
+#11 Z:\home\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#12 Z:\home\status_report\index.php(22): CApplication->run()
+#13 {main}
+REQUEST_URI=/api/report/create?auth_token=ee0bb781be81e2d865d110613478b41a&id&Report[text]=ssasAdDa
+---

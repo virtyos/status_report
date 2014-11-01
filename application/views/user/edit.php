@@ -2,13 +2,14 @@
   <div class="middle_block" style="width: 250px;">
   
  <?php $form = $this->beginWidget('CActiveForm', array(
-    'action' => '/user/edit',
+    'action' => '',
     'id' => 'edit-form',
     'htmlOptions'=>array('enctype'=>'multipart/form-data'),
   )); ?>
     <?php
       if ($statusSave) :
-        echo 'Изменения успешно сохранены<br><br>';
+        echo 'Изменения успешно сохранены<br>
+        <a href="/user/show/'.$user->id.'">Перейти на страницу профиля</a><br><br><br>';
       endif;
     ?>
     <?php
@@ -49,7 +50,12 @@
       <?php echo $form->textField($user, 'last_name', array('class' => 'form-control')); ?>
     </div>
     <div class="form-group">
-      <label>Аватар (jpg, png, gif, не более 5мб)</label>
+      <?php echo $form->labelEx($user, 'role'); ?>
+      <?php echo $form->dropDownList($user,'role',array('user'=>'user','admin'=>'admin')); ?>
+    </div>
+    <div class="form-group">
+      <label><img src="<?php echo $user->getAvatar('small_sqw', 1);?>"><br> Аватар (jpg, png, gif, не более 5мб)
+      </label>
       <input type="file" name="avatar">
     </div>
     <br><br>

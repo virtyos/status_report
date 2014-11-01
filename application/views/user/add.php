@@ -2,7 +2,7 @@
   <div class="middle_block" style="width: 250px;">
   
  <?php $form = $this->beginWidget('CActiveForm', array(
-    'action' => '/user/add',
+    'action' => '',
     'id' => 'edit-form',
     'htmlOptions'=>array('enctype'=>'multipart/form-data'),
   )); ?>
@@ -47,6 +47,10 @@
     <div class="form-group">
       <?php echo $form->labelEx($user, 'last_name'); ?>
       <?php echo $form->textField($user, 'last_name', array('class' => 'form-control')); ?>
+    </div>
+    <div class="form-group">
+      <?php echo $form->labelEx($user, 'role'); ?>
+      <?php echo $form->dropDownList($user,'role',array('user'=>'user','admin'=>'admin')); ?>
     </div>
     <div class="form-group">
       <label>Аватар (jpg, png, gif, не более 5мб)</label>

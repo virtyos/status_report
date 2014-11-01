@@ -3,7 +3,7 @@ class AuthController extends ApiController {
   
   public function actionLogin() {
     $login = Yii::app()->request->getParam('login');
-    $password = Yii::app()->request->getParam($password);
+    $password = Yii::app()->request->getParam('password');
     $loginForm = new LoginTokenForm;
     $loginForm->login = $login;
     $loginForm->password = $password;

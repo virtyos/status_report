@@ -177,6 +177,7 @@ INSERT INTO `user` (`id`, `login`, `password_hash`, `first_name`, `last_name`, `
 ALTER TABLE `report`
   ADD CONSTRAINT `report_ibfk_1` FOREIGN KEY (`owner_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
+  ALTER TABLE  `user` CHANGE  `aut_token_expires`  `auth_token_expires` INT( 11 ) NOT NULL
 SQL;
     $connection = Yii::app()->db; 	
     $command = $connection->createCommand($sql);

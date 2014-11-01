@@ -19,6 +19,7 @@ body {
   border: 1px solid #d4d4d4;
   min-height: 40px;
   height: 45px;
+  position: fixed;
 }
 
 .header-content, .content {
@@ -36,6 +37,8 @@ body {
   border-radius: 10px;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
+  margin-top: 45px;
+  margin-bottom: 30px;
 }
 
 .content-content {

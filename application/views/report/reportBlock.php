@@ -8,7 +8,7 @@
   </div>
   <div class="text">
     <?php
-      echo $report->text;
+      echo CHtml::encode($report->text);
     ?>
   </div>
   <div class="date"><?php echo Utils::getHumanDate($report->created_at); ?></div>

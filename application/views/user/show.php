@@ -44,6 +44,7 @@
           <input type="submit" class="btn btn-default" value="Написать репорт">
         </div>
       </form>
+      <div class="error_list" id="report_add_error"></div>
       </div>
       <script type="text/javascript">
         $(function(){

@@ -14,7 +14,7 @@
  * @property integer $updated_at
  * @property integer $avatar_id
  * @property string $auth_token
- * @property integer $aut_token_expires
+ * @property integer $auth_token_expires
  * @property integer $timezone
  *
  * The followings are the available model relations:
@@ -54,16 +54,16 @@ class User extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('login, first_name, last_name', 'required'),
-			array('created_at, updated_at, avatar_id, aut_token_expires', 'numerical', 'integerOnly'=>true),
+			array('created_at, updated_at, avatar_id, auth_token_expires', 'numerical', 'integerOnly'=>true),
 			array('login', 'length', 'max'=>100),
-			array('password_hash, auth_token', 'length', 'max'=>32),
+			array('password_hash, auth_token_expires', 'length', 'max'=>32),
       array('new_password', 'correctConfirm', 'on' => 'edit, add'),
       array('new_password', 'required', 'on' => 'add'),
 			array('first_name, last_name', 'length', 'max'=>150),
 			array('role', 'length', 'max'=>20),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, login, password_hash, first_name, last_name, role, created_at, updated_at, avatar_id, auth_token, aut_token_expires', 'safe', 'on'=>'search'),
+			array('id, login, password_hash, first_name, last_name, role, created_at, updated_at, avatar_id, auth_token, auth_token_expires', 'safe', 'on'=>'search'),
 		);
 	}
   
@@ -101,7 +101,7 @@ class User extends CActiveRecord
       'new_password_confirm' => 'Подтверждение пароля',
 			'first_name' => 'Имя',
 			'last_name' => 'Фамилия',
-			'role' => 'Role',
+			'role' => 'Роль',
 			'created_at' => 'Created At',
 			'updated_at' => 'Updated At',
 			'avatar_id' => 'Avatar',
@@ -115,6 +115,10 @@ class User extends CActiveRecord
     return array(
       'modelErrorBehavior' => array(
         'class' => 'application.behaviors.ModelErrorBehavior',
+      ),
+      'CSafeContentBehavor' => array(
+        'class' => 'application.behaviors.CSafeContentBehavior',
+        'attributes' => array('login', 'first_name', 'last_name', 'role'),
       ),
     );
   }

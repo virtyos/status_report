@@ -29,16 +29,22 @@ var Report = {
   },
   
   addReport: function() {
+    $('#report_add_error').text('');
     var text = $('#repostText').val();
+    if (text === '') {
+      return false;
+    }
     $('#repostAddForm input[type=submit]').attr("disabled", 'disabled');
     $.post('/report/add', {text: text}, function(result) {
       result = $.parseJSON(result);
       if (result['status'] === 1) {
         $('#no_report').remove();
         $('#reportsList').prepend(result['html']);
-        $('#repostAddForm input[type=submit]').removeAttr("disabled");
         $('#repostText').val('');
+      } else if (result['status'] === 0){
+        $('#report_add_error').text(result['error']);
       }
+      $('#repostAddForm input[type=submit]').removeAttr("disabled");
     })    
     return false;
   }

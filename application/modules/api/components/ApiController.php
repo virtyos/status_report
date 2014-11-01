@@ -28,9 +28,9 @@ class ApiController extends CController
   protected function sendResult() {
     $result = array();
     $result['status'] = $this->resultStatus;
-    if ($resultStatus === RESULT_SUCCESS) {
+    if ($this->resultStatus == self::RESULT_SUCCESS) {
       $result['data'] = $this->resultData;
-    } elseif ($resultStatus === RESULT_ERROR) {
+    } elseif ($this->resultStatus == self::RESULT_ERROR) {
       $result['error_message'] = $this->resultErrorMessage;
     }
     echo json_encode($result);

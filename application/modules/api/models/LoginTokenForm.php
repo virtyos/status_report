@@ -44,7 +44,7 @@ class LoginTokenForm extends CFormModel
     $user = User::model()->findByAttributes(array(
       'login' => $this->login
     ));
-    if (!$user || $user->validatePassword($this->password)) {
+    if (!$user || !$user->validatePassword($this->password)) {
       return false;
     }
     $time = time();
