@@ -78,7 +78,7 @@ class User extends CActiveRecord
   
   public function isLoginExist() {
     $anotherUser = $this->find('login = :login', array(':login' => $this->login));
-    if ($anotherUser) {
+    if ($anotherUser && $anotherUser->id !== $this->id) {
       $this->addError('new_password', 'Такой логин уже занят');
       return false;
     }
