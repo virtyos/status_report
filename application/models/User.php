@@ -54,6 +54,7 @@ class User extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('login, first_name, last_name', 'required'),
+      array('login', 'isLoginExist', 'on' => 'add, edit'),
 			array('created_at, updated_at, avatar_id, auth_token_expires', 'numerical', 'integerOnly'=>true),
 			array('login', 'length', 'max'=>100),
 			array('password_hash, auth_token_expires', 'length', 'max'=>32),
@@ -73,6 +74,14 @@ class User extends CActiveRecord
       return false;
     }
     return true;
+  }
+  
+  public function isLoginExist() {
+    $anotherUser = $this->find('login = :login', array(':login' => $this->login));
+    if ($anotherUser) {
+      $this->addError('new_password', 'Такой логин уже занят');
+      return false;
+    }
   }
 
 	/**
